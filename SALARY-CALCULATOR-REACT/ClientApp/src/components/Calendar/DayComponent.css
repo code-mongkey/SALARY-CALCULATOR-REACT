@@ -1,0 +1,61 @@
+.row {
+  display: flex;
+  cursor: pointer;
+}
+.row:first-child {
+  cursor: initial;
+}
+.box:hover > span.text {
+  background-color: white;
+}
+.box {
+  border-radius: 100%;
+  font-weight: bold;
+  position: relative;
+  display: inline-flex;
+  width: calc(100% / 7);
+  height: 0;
+  padding-bottom: calc(100% / 7);
+  font-size: 12pt;
+}
+
+.box:first-child {
+  color: red;
+}
+.box:last-child {
+  color: #588dff;
+}
+.box.grayed {
+  color: gray;
+}
+
+.grayed {
+  color: gray;
+}
+
+.box:hover span.text {
+  background-color: rgba(#588dff, 0.1);
+}
+.box.today {
+  background-color: rgba(red, 0.1);
+}
+.box.selected span.text {
+  background-color: #588dff;
+  color: white;
+}
+.selected {
+  background-color: #588dff;
+  color: white;
+}
+span.text {
+  border-radius: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
