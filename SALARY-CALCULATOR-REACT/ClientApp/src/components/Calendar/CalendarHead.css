@@ -10,18 +10,24 @@ button {
   display: inline-flex;
   background: transparent;
   border: none;
-  font-size: 20pt;
+  font-size: 28pt;
   padding: 4px;
   border-radius: 4px;
+  transition-duration: 0.5s;
 }
-button:hover span.title:hover {
-  background-color: rgba(gray, 0.1);
-}
-button:active span.title:hover {
-  background-color: rgba(gray, 0.2);
-}
-span.title {
+.title {
+  font-size: 28pt;
   cursor: pointer;
   border-radius: 5px;
   padding: 4px 12px;
+}
+button:hover {
+  background-color: #dddddd;
+  border-radius: 100%;
+}
+.title:hover {
+  font-weight: bold;
+}
+button:focus {
+  outline: 0;
 }

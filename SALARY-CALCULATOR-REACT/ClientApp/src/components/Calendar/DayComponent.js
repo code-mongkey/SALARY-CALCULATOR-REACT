@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import moment, { Moment as MomentTypes } from "moment";
+import moment from "moment";
 import "./DayComponent.css";
 
 function Generate() {
   const today = moment();
-  const startWeek = today.startOf("month").week();
+  const startWeek = today.clone().startOf("month").week();
   const endWeek =
     today.clone().endOf("month").week() === 1
       ? 53

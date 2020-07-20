@@ -9,7 +9,6 @@
   background-color: white;
 }
 .box {
-  border-radius: 100%;
   font-weight: bold;
   position: relative;
   display: inline-flex;
@@ -17,6 +16,7 @@
   height: 0;
   padding-bottom: calc(100% / 7);
   font-size: 12pt;
+  border: 1px solid #cccccc;
 }
 
 .box:first-child {

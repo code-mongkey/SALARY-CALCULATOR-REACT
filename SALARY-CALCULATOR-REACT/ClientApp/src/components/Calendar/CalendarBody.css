@@ -5,36 +5,18 @@
 .row:first-child {
   cursor: initial;
 }
-.box:hover > span.text {
+.boxHeader:hover > span.text {
   background-color: white;
 }
-.box {
+
+.boxHeader {
   font-weight: bold;
   position: relative;
   display: inline-flex;
   width: calc(100% / 7);
   height: 0;
-  padding-bottom: calc(100% / 7);
-  font-size: 12pt;
-}
-.box:first-child {
-  color: red;
-}
-.box:last-child {
-  color: #588dff;
-}
-.box.grayed {
-  color: gray;
-}
-.box:hover span.text {
-  background-color: rgba(#588dff, 0.1);
-}
-.box.today {
-  background-color: rgba(red, 0.1);
-}
-.box.selected span.text {
-  background-color: #588dff;
-  color: white;
+  padding-bottom: calc(100% / 30);
+  font-size: 16pt;
 }
 span.text {
   border-radius: 100%;
