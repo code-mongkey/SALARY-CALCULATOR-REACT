@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import moment from "moment";
 import "./DayComponent.css";
+import Popup from "reactjs-popup";
+
+function clicked(current) {
+  console.log(current.format("YYYYMMDD"));
+}
 
 function Generate() {
   const today = moment();
@@ -27,9 +32,18 @@ function Generate() {
                 : "";
             let isGrayed =
               current.format("MM") === today.format("MM") ? "" : "grayed";
+            let isToday =
+              today.format("YYYYMMDD") === current.format("YYYYMMDD")
+                ? "today"
+                : "";
             return (
-              <div className={`box  ${isSelected} ${isGrayed}`} key={i}>
-                <span className={`text`}>{current.format("D")}</span>
+              <div
+                className={`box  ${isSelected} ${isGrayed} ${isToday}`}
+                key={i}
+                onClick={clicked.bind(this, current)}
+              >
+                <div className="day">{current.format("D")}</div>
+                <div className="content"></div>
               </div>
             );
           })}

@@ -1,17 +1,11 @@
-.row {
-  display: flex;
+.box:hover {
   cursor: pointer;
 }
-.row:first-child {
-  cursor: initial;
-}
-.box:hover > span.text {
-  background-color: white;
-}
+
 .box {
   font-weight: bold;
   position: relative;
-  display: inline-flex;
+  display: block;
   width: calc(100% / 7);
   height: 0;
   padding-bottom: calc(100% / 7);
@@ -44,9 +38,10 @@
   color: white;
 }
 .selected {
-  background-color: #588dff;
+  background-color: #99aaff;
   color: white;
 }
+
 span.text {
   border-radius: 100%;
   display: inline-flex;
@@ -58,4 +53,14 @@ span.text {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.day {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  text-align: left;
 }
