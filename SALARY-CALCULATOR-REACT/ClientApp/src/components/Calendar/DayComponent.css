@@ -9,7 +9,7 @@
   width: calc(100% / 7);
   height: 0;
   padding-bottom: calc(100% / 7);
-  font-size: 12pt;
+  font-size: 10pt;
   border: 1px solid #cccccc;
 }
 
@@ -64,3 +64,7 @@ span.text {
 .content {
   text-align: left;
 }
+
+
+
+

@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 import moment from "moment";
 import "./DayComponent.css";
-import Popup from "reactjs-popup";
+import { RegSchedule } from "./RegSchedule";
 
-function clicked(current) {
-  console.log(current.format("YYYYMMDD"));
-}
-
-function Generate() {
+function Generate(props) {
   const today = moment();
   const startWeek = today.clone().startOf("month").week();
   const endWeek =
@@ -40,7 +36,7 @@ function Generate() {
               <div
                 className={`box  ${isSelected} ${isGrayed} ${isToday}`}
                 key={i}
-                onClick={clicked.bind(this, current)}
+                onClick={props.openPopup}
               >
                 <div className="day">{current.format("D")}</div>
                 <div className="content"></div>
@@ -54,13 +50,33 @@ function Generate() {
 }
 
 export class DayComponent extends Component {
+  constructor(){
+    super();
+    this.state = {
+      showPopup: false
+    };
+  }
+
+  togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+  }  
+
   render() {
     return (
       <>
         <div className="day">
-          <Generate></Generate>
+          <Generate openPopup={this.togglePopup.bind(this)}></Generate>
+          {this.state.showPopup ?
+          <RegSchedule
+            closePopup={this.togglePopup.bind(this)}
+          />
+          : null
+        }
         </div>
       </>
     );
   }
 }
+
