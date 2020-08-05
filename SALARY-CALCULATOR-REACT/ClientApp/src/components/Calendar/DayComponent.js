@@ -36,6 +36,7 @@ function Generate(props) {
               <div
                 className={`box  ${isSelected} ${isGrayed} ${isToday}`}
                 key={i}
+                cur_date={current.format("YYYYMMDD")}
                 onClick={props.openPopup}
               >
                 <div className="day">{current.format("D")}</div>
@@ -50,33 +51,29 @@ function Generate(props) {
 }
 
 export class DayComponent extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      showPopup: false
+      showPopup: false,
     };
   }
 
   togglePopup() {
     this.setState({
-      showPopup: !this.state.showPopup
+      showPopup: !this.state.showPopup,
     });
-  }  
+  }
 
   render() {
     return (
       <>
         <div className="day">
           <Generate openPopup={this.togglePopup.bind(this)}></Generate>
-          {this.state.showPopup ?
-          <RegSchedule
-            closePopup={this.togglePopup.bind(this)}
-          />
-          : null
-        }
+          {this.state.showPopup ? (
+            <RegSchedule closePopup={this.togglePopup.bind(this)} />
+          ) : null}
         </div>
       </>
     );
   }
 }
-

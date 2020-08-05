@@ -10,7 +10,6 @@
   height: 0;
   padding-bottom: calc(100% / 7);
   font-size: 10pt;
-  border: 1px solid #cccccc;
 }
 
 .box:first-child {
@@ -38,8 +37,9 @@
   color: white;
 }
 .selected {
-  background-color: #99aaff;
-  color: white;
+  background-color: #f0f0f0;
+  color: #00a086;
+  border: 1px solid #e0e0e0;
 }
 
 span.text {
@@ -56,15 +56,13 @@ span.text {
 }
 
 .day {
-  text-align: center;
+  text-align: left;
   justify-content: center;
   align-items: center;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
 }
 
 .content {
   text-align: left;
 }
-
-
-
-
